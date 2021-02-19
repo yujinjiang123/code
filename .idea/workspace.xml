@@ -20,31 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ece8dbc9-212f-4d17-9e2e-3829b846d854" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/algorithm/classic.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algorithm/offer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inherit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leetcode.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sort.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-simple/src/apis/search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../webpack-study/config/webpack.dev.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../webpack-study/src/pages/lazy-image/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../webpack-study/src/pages/lazy-image/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../a.html" beforeDir="false" afterPath="$PROJECT_DIR$/../a.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/../demo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jianshu/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/../jianshu/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jianshu/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/../jianshu/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jianshu/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../jianshu/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jianshu/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../jianshu/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jianshu/src/common-component/header/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../jianshu/src/common-component/header/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jianshu/src/common-component/header/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/../jianshu/src/common-component/header/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jianshu/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../jianshu/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jianshu/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../jianshu/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webpack-lesson/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webpack-lesson/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webpack-lesson/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webpack-lesson/webpack.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../webpack-lesson/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode.js" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webpack-study/src/pages/ simulated-event/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../webpack-study/src/pages/simulated-event/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webpack-study/src/pages/ simulated-event/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../webpack-study/src/pages/simulated-event/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webpack-study/src/pages/drag/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../webpack-study/src/pages/drag/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webpack-study/src/pages/drag/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../webpack-study/src/pages/drag/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webpack-study/src/pages/event-delegation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../webpack-study/src/pages/event-delegation/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webpack-study/src/pages/event-delegation/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../webpack-study/src/pages/event-delegation/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +47,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1nPpTh1wxCaQt9LBcHgzJ73O1HG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -86,14 +70,14 @@
     <property name="org.elm.workspace.PROJECT_DISCOVERY" value="true" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Node.js.sort.js">
+  <component name="RunManager" selected="Node.js.curry.js">
     <configuration name="Unnamed" type="NodeJSConfigurationType" nameIsGenerated="true" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="classic.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/algorithm/classic.js" working-dir="$PROJECT_DIR$/algorithm">
       <method v="2" />
     </configuration>
-    <configuration name="inherit.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/inherit.js" working-dir="$PROJECT_DIR$">
+    <configuration name="curry.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/curry.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="leetcode.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/leetcode.js" working-dir="$PROJECT_DIR$">
@@ -108,18 +92,18 @@
     <list>
       <item itemvalue="Node.js.Unnamed" />
       <item itemvalue="Node.js.classic.js" />
-      <item itemvalue="Node.js.inherit.js" />
       <item itemvalue="Node.js.leetcode.js" />
       <item itemvalue="Node.js.offer.js" />
       <item itemvalue="Node.js.sort.js" />
+      <item itemvalue="Node.js.curry.js" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.curry.js" />
         <item itemvalue="Node.js.sort.js" />
         <item itemvalue="Node.js.leetcode.js" />
         <item itemvalue="Node.js.offer.js" />
         <item itemvalue="Node.js.classic.js" />
-        <item itemvalue="Node.js.inherit.js" />
       </list>
     </recent_temporary>
   </component>
@@ -146,6 +130,7 @@
       <workItem from="1612526387614" duration="11000" />
       <workItem from="1612778570841" duration="3373000" />
       <workItem from="1612796866849" duration="72000" />
+      <workItem from="1613747272717" duration="1909000" />
     </task>
     <servers />
   </component>
@@ -177,22 +162,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1612349081708" />
-    <state width="1877" height="269" key="GridCell.Tab.0.bottom" timestamp="1612784298938">
+    <state width="1877" height="269" key="GridCell.Tab.0.bottom" timestamp="1613749827890">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="269" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612784298938" />
-    <state width="1877" height="269" key="GridCell.Tab.0.center" timestamp="1612784298938">
+    <state width="1877" height="269" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1613749827890" />
+    <state width="1877" height="269" key="GridCell.Tab.0.center" timestamp="1613749827890">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="269" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612784298938" />
-    <state width="1877" height="269" key="GridCell.Tab.0.left" timestamp="1612784298938">
+    <state width="1877" height="269" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1613749827890" />
+    <state width="1877" height="269" key="GridCell.Tab.0.left" timestamp="1613749827890">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="269" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612784298938" />
-    <state width="1877" height="269" key="GridCell.Tab.0.right" timestamp="1612784298938">
+    <state width="1877" height="269" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1613749827890" />
+    <state width="1877" height="269" key="GridCell.Tab.0.right" timestamp="1613749827890">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="269" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612784298938" />
+    <state width="1877" height="269" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1613749827890" />
     <state width="1877" height="303" key="GridCell.Tab.1.bottom" timestamp="1612784298913">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

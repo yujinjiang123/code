@@ -94,4 +94,56 @@ function maxLength( arr ) {
     }
     return opt;
 }
-console.log(maxLength([2,2,3,4,3,4]))
+
+/**
+ * 括号生成
+ * @param {number} n
+ * @return {string[]}
+ */
+var generateParenthesis = function(n) {
+    const res=[];
+    const track=[];
+    (function backtrack(left,right){
+        if(right<left) return;
+        if(left<0||right<0) return;
+        if(left===0&&right===0){
+            res.push(track.join(''));
+            return;
+        }
+
+        track.push('(');
+        backtrack(left-1,right);
+        track.pop();
+        track.push(')');
+        backtrack(left,right-1);
+        track.pop();
+    })(n,n)
+    return res;
+};
+
+/**
+ * 678 有效的括号字符串
+ * @param {string} s
+ * @return {boolean}
+ */
+var checkValidString = function(s) {
+    const stack=[];
+    const map={
+        ')':'(',
+        '*':true
+    }
+    for(let ch of s){
+        if(!map[ch]){
+            stack.push(ch);
+        }else{
+            const pop=stack.pop();
+            if(pop!==map[ch]){
+                return false;
+            }
+        }
+    }
+    return stack.length===0;
+};
+
+console.log(checkValidString('(*)'));
+
