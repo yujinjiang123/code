@@ -22,6 +22,11 @@ function curry(fn, length) {
     }
 }
 
+//es6 实现方式
+function curry(fn,...args){
+    return fn.length<=args.length?fn(...args):curry.bind(null,fn,...args);
+}
+
 function test(a,b,c,d){
     console.log(a,b,c,d);
 }
