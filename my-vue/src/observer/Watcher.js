@@ -1,5 +1,5 @@
 import Dep from "./Dep";
-import {getObjValueByString} from '../utils'
+import {getObjValueByString} from '@/utils'
 export default class Watcher {
   constructor(vm, node, name) {
     Dep.target = this;
@@ -11,7 +11,11 @@ export default class Watcher {
   }
 
   get() {
-    this.value = getObjValueByString(this.vm,this.name);
+    if(this.node.nodeType===3) {
+      this.value = this.name.map(e => getObjValueByString(this.vm, e)).join(' ');
+    }else{
+      this.value = getObjValueByString(this.vm,this.name);
+    }
   }
 
   update() {
