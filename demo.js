@@ -1,6 +1,6 @@
 const str="{{text}}{{obj.name}}"
 
-var reg = /[^{\}]+(?=})/g;
+var reg = /[^{}]+(?=})/g;
 
 const arr=str.match(reg)
 arr.forEach(e=>{

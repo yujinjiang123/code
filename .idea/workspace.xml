@@ -20,9 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ece8dbc9-212f-4d17-9e2e-3829b846d854" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-vue/src/proxy/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-vue/src/utils/list-diff.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leetcode.js" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/demo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-vue/babel.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-vue/babel.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-vue/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-vue/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-vue/src/compile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-vue/src/compile/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-vue/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-vue/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-vue/src/observer/Watcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-vue/src/observer/Watcher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-vue/src/utils/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-vue/src/utils/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-vue/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-vue/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-vue/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/my-vue/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../webpack-study/src/pages/ simulated-event/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../webpack-study/src/pages/simulated-event/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../webpack-study/src/pages/ simulated-event/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../webpack-study/src/pages/simulated-event/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../webpack-study/src/pages/drag/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../webpack-study/src/pages/drag/index.html" afterDir="false" />
@@ -60,30 +70,32 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../my-code/teaching-task-management" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/my-vue/webpack.config.js" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="org.elm.workspace.PROJECT_DISCOVERY" value="true" />
+    <property name="settings.editor.selected.configurable" value="settings.webpack" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Node.js.curry.js">
+  <component name="RunManager" selected="Node.js.demo.js">
     <configuration name="Unnamed" type="NodeJSConfigurationType" nameIsGenerated="true" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
-    <configuration name="classic.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/algorithm/classic.js" working-dir="$PROJECT_DIR$/algorithm">
       <method v="2" />
     </configuration>
     <configuration name="curry.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/curry.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="leetcode.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/leetcode.js" working-dir="$PROJECT_DIR$">
+    <configuration name="demo.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/demo.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="offer.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/algorithm/offer.js" working-dir="$PROJECT_DIR$/algorithm">
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/my-vue/src/utils/index.js" working-dir="$PROJECT_DIR$/my-vue/src/utils">
+      <method v="2" />
+    </configuration>
+    <configuration name="leetcode.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/leetcode.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="sort.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/sort.js" working-dir="$PROJECT_DIR$">
@@ -91,19 +103,19 @@
     </configuration>
     <list>
       <item itemvalue="Node.js.Unnamed" />
-      <item itemvalue="Node.js.classic.js" />
       <item itemvalue="Node.js.leetcode.js" />
-      <item itemvalue="Node.js.offer.js" />
       <item itemvalue="Node.js.sort.js" />
       <item itemvalue="Node.js.curry.js" />
+      <item itemvalue="Node.js.index.js" />
+      <item itemvalue="Node.js.demo.js" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.demo.js" />
+        <item itemvalue="Node.js.index.js" />
         <item itemvalue="Node.js.curry.js" />
         <item itemvalue="Node.js.sort.js" />
         <item itemvalue="Node.js.leetcode.js" />
-        <item itemvalue="Node.js.offer.js" />
-        <item itemvalue="Node.js.classic.js" />
       </list>
     </recent_temporary>
   </component>
@@ -131,6 +143,7 @@
       <workItem from="1612778570841" duration="3373000" />
       <workItem from="1612796866849" duration="72000" />
       <workItem from="1613747272717" duration="1909000" />
+      <workItem from="1613902447839" duration="4736000" />
     </task>
     <servers />
   </component>
@@ -158,26 +171,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="705" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1611317852012" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1612349081708">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1613905296669">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1612349081708" />
-    <state width="1877" height="269" key="GridCell.Tab.0.bottom" timestamp="1613749827890">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1613905296669" />
+    <state width="1877" height="65" key="GridCell.Tab.0.bottom" timestamp="1613907225942">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="269" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1613749827890" />
-    <state width="1877" height="269" key="GridCell.Tab.0.center" timestamp="1613749827890">
+    <state width="1877" height="65" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1613907225942" />
+    <state width="1877" height="65" key="GridCell.Tab.0.center" timestamp="1613907225942">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="269" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1613749827890" />
-    <state width="1877" height="269" key="GridCell.Tab.0.left" timestamp="1613749827890">
+    <state width="1877" height="65" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1613907225942" />
+    <state width="1877" height="65" key="GridCell.Tab.0.left" timestamp="1613907225942">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="269" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1613749827890" />
-    <state width="1877" height="269" key="GridCell.Tab.0.right" timestamp="1613749827890">
+    <state width="1877" height="65" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1613907225942" />
+    <state width="1877" height="65" key="GridCell.Tab.0.right" timestamp="1613907225942">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="269" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1613749827890" />
+    <state width="1877" height="65" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1613907225942" />
     <state width="1877" height="303" key="GridCell.Tab.1.bottom" timestamp="1612784298913">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -226,6 +239,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="303" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612784298914" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1613905298375">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1613905298375" />
     <state x="623" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1611302472706">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
