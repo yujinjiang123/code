@@ -1,25 +1,13 @@
 import VNode from '@/VNode/VNode.js';
-import diff from './diff';
 
-const ul=new VNode('ul',{id:'list'},[
-    new VNode('li',{class:'item'},['Item 1']),
-    new VNode('li',{class:'item'},['Item 2']),
-    new VNode('li',{class:'item'},['Item 3'])
+const vn=new VNode('div',{id:'app'},[
+    new VNode('div',{style:'width:100px;height:100px;background-color:red'}),
+    new VNode('div',{style:'width:100px;height:100px;background-color:blue'})
 ])
 
-const ul2=new VNode('ul',{id:'list'},[
-    new VNode('li',{class:'item'},['Item 1']),
-    new VNode('li',{class:'item',id:'123'},['Item 4']),
-    new VNode('li',{class:'item'},['Item 3'])
-])
+const root=vn.render();
 
-
-const pachs=diff(ul,ul2);
-console.log(pachs);
-
-const ulRoot=ul.render();
-
-document.body.appendChild(ulRoot)
+document.body.appendChild(root)
 
 
 
