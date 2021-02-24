@@ -15,7 +15,7 @@ Function.prototype.myCall=function(context){
 Function.prototype.myApply=function(context,arr){
     var context=context||window;
     context.fn=this;
-    var reuslt;
+    var result;
     if(!arr){
         result=context.fn();
     }
