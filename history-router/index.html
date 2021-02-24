@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hisory Router</title>
+</head>
+
+<body>
+    <h1>Hisory-Router</h1>
+    <ul>
+        <li>
+            <a href="/home">home</a>
+        </li>
+        <li>
+            <a href="/about">about</a>
+        </li>
+    </ul>
+
+    <div id="router-view">
+
+    </div>
+
+    <script>
+        let routerView = null;
+        window.addEventListener('DOMContentLoaded', () => {
+            routerView = document.getElementById('router-view');
+            onPopState();
+            const linkList = document.querySelectorAll('a[href]');
+            //拦截a标签默认行为
+            linkList.forEach(e => e.addEventListener('click', (event) => {
+                event.preventDefault();
+                window.history.pushState(null, '', e.getAttribute('href'));
+                onPopState();
+            }))
+        })
+        window.addEventListener('popstate', onPopState);
+
+        function onPopState() {
+            const { pathname } = location;
+
+            switch (pathname) {
+                case '/home':
+                    routerView.innerHTML = "home";
+                    break;
+                case '/about':
+                    routerView.innerHTML = "about";
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
