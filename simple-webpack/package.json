@@ -2,5 +2,11 @@
   "name": "simple-webpack",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.13.1",
+    "@babel/parser": "^7.13.4",
+    "@babel/preset-env": "^7.13.5",
+    "@babel/traverse": "^7.13.0"
+  }
 }
