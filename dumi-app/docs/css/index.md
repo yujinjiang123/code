@@ -1,6 +1,6 @@
 ---
 nav:
-  title: 快速上手
+  title: css
   order: 1
 ---
 
