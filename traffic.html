@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>红绿灯</title>
+    <style>
+        .container {
+            display: flex;
+
+        }
+
+        .light {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50px;
+            margin: 0 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+
+    </div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        function Light(props) {
+            const { deafultColor, color, open, id } = props;
+            return (
+                <div className="light" style={{ backgroundColor: id === open ? color : deafultColor }}></div>
+            )
+        }
+
+        class App extends React.Component {
+
+            constructor(props) {
+                super(props);
+                this.state = {
+                    lightList: [{
+                        deafultColor: 'gray',
+                        color: 'red',
+                        time: 3000
+                    }, {
+                        deafultColor: 'gray',
+                        color: 'green',
+                        time: 3000
+                    }, {
+                        deafultColor: 'gray',
+                        color: 'yellow',
+                        time: 3000
+                    }],
+                    open: null
+                };
+                // this.start();
+            }
+
+            render() {
+                return (
+                    <div className="container">
+                        {this.generateLight()}
+                    </div>
+                )
+            }
+
+            generateLight() {
+                return this.state.lightList.map((e, index) => (
+                    <Light id={index} open={this.state.open} key={index} {...e} />
+                ))
+            }
+
+            start() {
+                Promise.resolve().then(() => {
+                    
+                }).then(() => {
+
+                }).then(() => {
+
+                }).then(() => this.start())
+            }
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.getElementById("root")
+        );
+    </script>
+</body>
+
+</html>

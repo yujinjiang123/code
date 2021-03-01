@@ -80,7 +80,8 @@ class Compiler {
 
   generate(graph) {
     const filepath=path.join(this.output.path,this.output.filename);
-    const bundle= `(function(graph){
+    
+    const bundle = `(function(graph){
       function require(module) {
         function localRequire(relativePath) {
           return require(graph[module].dependencies[relativePath])
@@ -92,7 +93,7 @@ class Compiler {
         return exports;
       }
       require('${this.entry}')
-    })(${graph})`;
+    })(${JSON.stringify(code)})`;
     fs.writeFileSync(filepath,bundle,'utf-8')
   }
 }

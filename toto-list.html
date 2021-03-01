@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList</title>
+</head>
+
+<body>
+    <div id="todoList">
+        <input id="inputValue" type="text">
+        <ul id="item-container"></div>
+    </div>
+
+    <script>
+        let todoList=null;
+        function TodoList(){
+            this.todoListEl=document.getElementById("todoList");
+            this.inputEl=document.getElementById("inputValue");
+            this.itemContainer=document.getElementById("item-container");
+            this.inputValue="";
+            this.itemList=[
+                '1','2','3','112'
+            ];
+        }
+
+        TodoList.prototype.init=function(){
+            const {inputEl,todoListEl,itemList,itemContainer}=this;
+            const inputHandler=debounce(({target})=>{
+                this.inputValue=target.value;
+                const keyword=this.inputValue.trim();
+                const resultListFargment=generateListFragment(this.itemList.filter(e=>e.includes(keyword)));
+                console.log(resultListFargment);
+                itemContainer.replace(resultListFargment);
+            },100);
+            inputEl.addEventListener('input',inputHandler);
+            let value=this.inputValue;
+            Object.defineProperty(this,'inputValue',{
+                get(){
+                    return value;
+                },
+                set(newVal){
+                    if(newVal===value){
+                        return;
+                    }
+                    value=newVal;
+                }
+            })
+            const listFragment=generateListFragment(itemList);
+            itemContainer.replace(listFragment);
+        }
+
+        function generateListFragment(list){
+            const itemFragment=document.createDocumentFragment();
+            list.forEach((e,index)=>{
+                const li=document.createElement("li");
+                li.id=index;
+                li.textContent=e;
+                itemFragment.appendChild(li);
+            });
+            return itemFragment;
+        }
+
+        function debounce(fn,wait=100,immediate=false){
+            let timeout=null;
+            return function(){
+                const context=this;
+                const args=arguments;
+                if(timeout) clearTimeout(timeout);
+                if(immediate){
+                    const callNow=!timeout;
+                    timeout=setTimeout(()=>{
+                        timeout=null;
+                    },wait);
+                    if(callNow) fn.apply(context,args);
+                }else{
+                    timeout=setTimeout(()=>{
+                        fn.apply(context,args);
+                    },wait)
+                }
+            }
+        }
+
+        window.onLoad=onLoad();
+        function onLoad(){
+            todoList=new TodoList();
+            todoList.init();
+        }
+
+    </script>
+</body>
+
+</html>
