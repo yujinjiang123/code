@@ -4,28 +4,24 @@
  * yield可以让生成器停止和开始执行。yeild只能在函数内部使用，类似于return，出现在嵌套的非生成器函数中会抛出语法错误。
  */
 
-function *generator(){
-    yield console.log('foo');
-    yield '12';
-    yield 1;
-    return 'baz'
+function* generator() {
+  yield console.log("foo");
+  yield "12";
+  yield 1;
+  return "baz";
 }
 
-
-const g=generator();
+const g = generator();
 console.log(g.next());
 console.log(g.next());
 console.log(g.next());
 console.log(g.next());
 console.log(g.next());
 
-
-function *nTime(n){
-    while(n--){
-        yield
-    }
+function* gen(x) {
+  let y = yield x + 2;
+  return y;
 }
-
-for(let _ of nTime(3)){
-    console.log('foo')
-}
+const g = gen(1);
+g.next(); // { value: 3, done: false }
+g.next(); // { value: undefined, done: true }
