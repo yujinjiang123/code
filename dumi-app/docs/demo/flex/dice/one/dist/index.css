@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  padding: 16px;
+  border: 1px solid gray;
+  border-radius: 16px;
+}
+.dot {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: black;
+}
+.center-1 {
+  justify-content: center;
+}
+.right-1 {
+  justify-content: flex-end;
+}
+.left-2 {
+  align-items: center;
+}
+.center-2 {
+  justify-content: center;
+  align-items: center;
+}
+.right-2 {
+  justify-content: flex-end;
+  align-items: center;
+}
+.left-3 {
+  align-items: flex-end;
+}
+.center-3 {
+  justify-content: center;
+  align-items: flex-end;
+}
+.right-3 {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
