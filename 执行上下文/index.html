@@ -13,10 +13,12 @@
     <script>
         let param1="全局变量";
         let f="2"
+        console.log(this);
         function a(){
             let param2='函数a中的变量';
             console.log([a]);
             function b(){
+                let param3="函数b中的变量"
                 console.log(param2);
                 console.log([a,b]);
             }
