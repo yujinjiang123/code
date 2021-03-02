@@ -22,3 +22,9 @@ function TreeNode(val) {
       }
       return list;
   }
+
+
+
+
+let n=1024-123;
+const arr=[64,16,4,1];
