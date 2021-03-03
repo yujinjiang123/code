@@ -24,10 +24,15 @@
         <v-app>
             <v-content>
                 <v-container style="display: flex;">
-                    <div v-for="(item,index) in lightList" class="light"
-                        :key='item.name'
+                    <div v-for="(item,index) in lightList" class="light" :key='item.name'
                         :style="{backgroundColor:index==open?item.color:'gray'}">
                     </div>
+                    <v-btn @click="start">
+                        start
+                    </v-btn>
+                    <v-btn @click="stop">
+                        stop
+                    </v-btn>
                 </v-container>
             </v-content>
         </v-app>
@@ -41,38 +46,54 @@
             vuetify: new Vuetify(),
             data: () => ({
                 lightList: [{
-                    name:'red',
+                    name: 'red',
                     deafultColor: 'gray',
                     color: 'red',
                     time: 2000
                 }, {
-                    name:'gerrn',
+                    name: 'gerrn',
                     deafultColor: 'gray',
                     color: 'green',
                     time: 3000
                 }, {
-                    name:'yellow',
+                    name: 'yellow',
                     deafultColor: 'gray',
                     color: 'yellow',
                     time: 1000
                 }],
-                open: null
+                open: null,
+                lightController: null
             }),
-            methods:{
-                async start(){
-                    for(let i in this.lightList){
-                        this.open=i;
-                        await new Promise((resolve,reject)=>{
-                            setTimeout(()=>{
-                                resolve();
-                            },this.lightList[i].time)
-                        })
-                    }
-                    this.start();
+            methods: {
+                start() {
+                    this.lightController.start();
+                },
+                stop() {
+                    this.lightController.stop();
                 }
             },
             mounted() {
-                this.start();
+                let start = true;
+                const {lightList}=this;
+                const lightController = {};
+                lightController.start = async function () {
+                    for (let i in this.lightList) {
+                        this.open = i;
+                        console.log(i);
+                        await new Promise((resolve, reject) => {
+                            setTimeout(() => {
+                                resolve();
+                            }, this.lightList[i].time)
+                        })
+                    }
+                    if (start) {
+                        lightController.start();
+                    }
+                }
+                lightController.stop = function () {
+                    start = false;
+                }
+                this.lightController = lightController;
             },
         })
     </script>
