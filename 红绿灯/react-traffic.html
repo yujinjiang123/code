@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .light {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            margin: 0 16px;
+        }
+
+        .container {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+    </div>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        function Light(props) {
+            const { deafultColor, color, open } = props;
+            return (
+                <div className="light" style={{ backgroundColor: open ? color : deafultColor }}></div>
+            )
+        }
+
+        class App extends React.Component {
+            constructor(props) {
+                super(props);
+                this.start=this.start.bind(this);
+                this.stop=this.stop.bind(this);
+                this.state = {
+                    lightList: [{
+                        deafultColor: 'gray',
+                        color: 'red',
+                        time: 3000
+                    }, {
+                        deafultColor: 'gray',
+                        color: 'green',
+                        time: 3000
+                    }, {
+                        deafultColor: 'gray',
+                        color: 'yellow',
+                        time: 3000
+                    }],
+                    open: null
+                };
+            }
+
+            render() {
+                return (
+                    <div className="container">
+                        {this.generateLight()}
+                        <button onClick={this.start()}>Start</button>
+                        <button onClick={this.stop()}>Stop</button>
+                    </div>
+                )
+            }
+
+            generateLight() {
+                return this.state.lightList.map((e, index) => (
+                    <Light id={index} open={this.state.open === index} key={index} {...e} />
+                ))
+            }
+
+            start(){
+
+            }
+
+            stop(){
+                this.setState(()=>{
+                    open:null
+                })
+            }
+
+            openLight(){
+                this.setState(()=>{
+                    open:id;
+                })
+            }
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.getElementById("root")
+        );
+    </script>
+</body>
+
+</html>
