@@ -180,4 +180,24 @@ function reverse(pre, k) {
 
 
 
-console.log(reverseKGroup(head,2));
+
+const addStrings = function(s, t){
+  let len1=s.length,len2=t.length;
+  let maxLen=Math.max(len1,len2);
+  s=Array(maxLen-len1+1).join('0').concat(s);
+  t=Array(maxLen-len2+1).join('0').concat(t);
+  let sum="";
+  let flag=0;
+  for(let i=maxLen-1;i>=0;i--){
+    const val=parseInt(s[i])+parseInt(t[i])+flag;
+    flag=Math.floor(val/10);
+    sum=val%10+sum;
+  }
+  if(flag===1){
+    sum+='1';
+  }
+  return sum;
+}
+
+
+console.log(addStrings("9007199254740991","1234567899999999999")==='1243575099254740990')
