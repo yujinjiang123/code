@@ -1,3 +1,8 @@
+function ListNode(x,next=null) {
+  this.val = x;
+  this.next = next;
+}
+
 function TreeNode(val) {
   this.val = val;
   this.left = this.right = null;
@@ -126,7 +131,7 @@ var countSubstrings = function (s) {
   if (len === 1) {
     return [s];
   }
-  let count=len;
+  let count = len;
   const dp = new Array(len);
   for (let i = 0; i < len; i++) {
     dp[i] = new Array(len);
@@ -134,13 +139,45 @@ var countSubstrings = function (s) {
   }
   for (let j = 1; j < len; j++) {
     for (let i = 0; i < j; i++) {
-        dp[i][j]=s[i] === s[j] && (j - i < 3 || dp[i + 1][j - 1]);
-        if(dp[i][j]){
-            count++;
-        }
+      dp[i][j] = s[i] === s[j] && (j - i < 3 || dp[i + 1][j - 1]);
+      if (dp[i][j]) {
+        count++;
+      }
     }
   }
   return count;
 };
 
-console.log(countSubstrings("abcaba"));
+//k个一组反转链表
+const head=new ListNode(1,new ListNode(2,new ListNode(3,new ListNode(4,new ListNode(5)))));
+function reverseKGroup(head, k) {
+  if(!head) return ;
+  const node = new ListNode(0);
+  node.next = head;
+  let pre = node,end=null;
+  while (pre) {
+    end=pre.next;
+    let i;
+    for (i = 1; i < k && end; i++){
+        end=end.next;
+    }
+    if(i<k||end===null) break;
+    pre = reverse(pre, k);
+  }
+  return node.next;
+}
+
+function reverse(pre, k) {
+  let p = pre.next;
+  for (let i = 1; p.next && i < k; i++) {
+    let next = p.next;
+    p.next = next.next;
+    next.next = pre.next;
+    pre.next = next;
+  }
+  return p.next ? p : null;
+}
+
+
+
+console.log(reverseKGroup(head,2));
