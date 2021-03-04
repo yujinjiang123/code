@@ -200,4 +200,18 @@ const addStrings = function(s, t){
 }
 
 
-console.log(addStrings("9007199254740991","1234567899999999999")==='1243575099254740990')
+// console.log(addStrings("9007199254740991","1234567899999999999")==='1243575099254740990')
+
+function mytrim(str){
+  let start=0,end=str.length-1;
+  while(start<=end&&str[start]===' '){
+    start++;
+  }
+  while(start<=end&&str[end]===' '){
+    end--;
+  }
+  return str.substring(start,end+1);
+}
+
+
+console.log(mytrim("   123   "))
