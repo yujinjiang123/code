@@ -214,4 +214,20 @@ function mytrim(str){
 }
 
 
-console.log(mytrim("   123   "))
+// console.log(mytrim("   123   "))
+
+var mySqrt = function(x) {
+    let start=0,end=(x>>1)+1,mid;
+    while(start<end){
+        mid=(start+end)>>1;
+        if(mid**2===x) return mid;
+        if(mid**2<x) {
+            start=mid;
+        }else{
+            end=mid-1;
+        }
+    }
+    return start;
+};
+
+mySqrt(4);
