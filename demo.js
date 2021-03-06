@@ -1,5 +1,3 @@
-
-
 function repeat (func, times, wait) {
   return async function(){
     const context=this;
@@ -14,6 +12,16 @@ function repeat (func, times, wait) {
     }
   }
 }
-//使下面调用代码能正常工作
-const repeatFunc = repeat(console.log, 4, 3000)
-repeatFunc("helloworld") //会输出四次helloworld，每次间隔3s
+// //使下面调用代码能正常工作
+// const repeatFunc = repeat(console.log, 4, 3000)
+// repeatFunc("helloworld") //会输出四次helloworld，每次间隔3s
+// console.log('123435');
+
+function myInterval(fn,wait,count){
+  if(count===1) return;
+  fn();
+  setTimeout(()=>myInterval(fn,wait,count-1),wait);
+}
+
+myInterval(()=>console.log(12),1000,4);
+console.log(123);
