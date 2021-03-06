@@ -1,0 +1,19 @@
+html,body{
+    margin:0;
+    padding: 0;
+}
+body{
+    height: 100%;
+}
+
+.todo-list{
+    width:600px;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.edit{
+    position:relative;
+}
