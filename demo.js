@@ -1,27 +1,28 @@
-function repeat (func, times, wait) {
-  return async function(){
-    const context=this;
-    const args=arguments;
-    for(let i =0;i<times;i++){
-      await new Promise((resolve,reject)=>{
-        func.apply(context,args);
-        setTimeout(() => {
-          resolve()
-        }, wait);
-      })
+function debounce(fn, wait, immediate) {
+  let timeout = null;
+  const debounced = function () {
+    const context = this;
+    const args = arguments;
+    if (timeout) {
+      clearTimeout(timeout);
     }
-  }
-}
-// //使下面调用代码能正常工作
-// const repeatFunc = repeat(console.log, 4, 3000)
-// repeatFunc("helloworld") //会输出四次helloworld，每次间隔3s
-// console.log('123435');
+    if (immediate) {
+      const callNow = !timeout;
+      timeout = setTimeout(() => {
+        timeout = null;
+      }, wait);
+      if (callNow) {
+        fn.apply(context, args);
+      }
+    } else {
+      timeout = setTimeout(() => {
+        fn.apply(context, args);
+      }, wait);
+    }
+  };
 
-function myInterval(fn,wait,count){
-  if(count===1) return;
-  fn();
-  setTimeout(()=>myInterval(fn,wait,count-1),wait);
+  debounce.cancel = function () {
+    timeout = null;
+  };
+  return debounce;
 }
-
-myInterval(()=>console.log(12),1000,4);
-console.log(123);
