@@ -80,6 +80,19 @@ MyPromise.all=function(promises){
    })
 }
 
+MyPromise.race = function (promises) {
+    return new Promise((resolve, reject) => {
+      if (!Array.isArray(promises)) {
+        resolve(new Error());
+      }
+      for (let promise of promises) {
+        promise.then((res) => {
+          resolve(res);
+        });
+      }
+    });
+  };
+
 
 
 let a=new MyPromise((resolve,reject)=>{
