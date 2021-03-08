@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .liner {
+            height: 1px;
+            background-color: red;
+        }
+
+        .half-liner {
+            height: 1px;
+            background-color: red;
+            transform: scaleY(.5);
+        }
+
+        #demo {
+            width: 0;
+            height: 0;
+            border-width: 20px;
+            border-style: solid;
+            border-color: transparent transparent red red;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>1px</p>
+        <div class="liner">
+        </div>
+        <p>0.5px</p>
+        <div class="half-liner">
+        </div>
+        <p>三角形</p>
+        <div id="demo"></div>
+    
+    </div>
+</body>
+
+</html>

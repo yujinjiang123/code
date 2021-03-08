@@ -1,92 +1,64 @@
-const PENDING = "pending";
-const RESOLVE = "resolve";
-const REJECT = "reject";
-
-function MyPromise(fn) {
-  this.state = PENDING;
-  this.value = null;
-  this.resolveCallbacks = [];
-  this.rejectCallbacks = [];
-  const self = this;
-
-  function resolve(val) {
-    if (val instanceof MyPromise) {
-      return val.then(resolve, reject);
+class HeapSort {
+  headSort(arr) {
+    this.buildMaxHeap(arr);
+    let len = arr.length;
+    for (let i = len - 1; i > 0; i--) {
+      [arr[0], arr[i]] = [arr[i], arr[0]];
+      this.heapAdjust(arr, 0, i);
     }
-    setTimeout(() => {
-      if (self.state === PENDING) {
-        self.value = val;
-        self.state = RESOLVE;
-        self.resolveCallbacks.forEach((callback) => callback(val));
-      }
-    });
   }
 
-  function reject() {
-    setTimeout(() => {
-      if (self.state === PENDING) {
-        self.value = val;
-        self.state = REJECT;
-        self.rejectCallbacks.forEach((callback) => callback(val));
-      }
-    });
+  buildMaxHeap(arr) {
+    const len = arr.length;
+    for (let i = (len >> 1) - 1; i >= 0; i--) {
+      this.heapAdjust(arr, i, len);
+    }
   }
 
-  try {
-    fn(resolve, reject);
-  } catch (err) {
-    reject(err);
+  heapAdjust(arr, k, len) {
+    let left, right, max;
+    while (true) {
+      (max = k), (left = 2 * k + 1), (right = 2 * k + 2);
+      if (left < len && arr[max] < arr[left]) {
+        max = left;
+      }
+      if (right < len && arr[max] < arr[right]) {
+        max = right;
+      }
+
+      if (max === k) {
+        break;
+      } else {
+        [arr[max], arr[k]] = [arr[k], arr[max]];
+        k = max;
+      }
+    }
   }
 }
 
-MyPromise.prototype.then = function (onResolve, onReject) {
-  onResolve = typeof onResolve === "function" ? onResolve : (val) => val;
-  onReject = typeof onReject === "function" ? onReject : (val) => val;
+const arr = [3, 4, 2, 7, 1, 56, 12, 4, 89];
 
-  if (this.state === PENDING) {
-    this.rejectCallbacks.push(onReject);
-    this.resolveCallbacks.push(onResolve);
-  }
 
-  if (this.state === RESOLVE) {
-    onResolve(this.value);
-  }
 
-  if (this.state === REJECT) {
-    onReject(this.value);
-  }
-};
+// 输出以下代码运行结果，为什么？如果希望每隔 1s 输出一个结果，应该如何改造？注意不可改动 square 方法
 
-MyPromise.race = function (promises) {
+const list = [1, 2, 3]
+const square = num => {
   return new Promise((resolve, reject) => {
-    if (!Array.isArray(promises)) {
-      resolve(new Error());
-    }
-    for (let promise of promises) {
-      promise.then((res) => {
-        resolve(res);
-      });
-    }
-  });
-};
+    setTimeout(() => {
+      resolve(num * num)
+    }, 1000)
+  })
+}
 
-let a = new MyPromise((resolve, reject) => {
-  setTimeout(() => {
-    resolve(1);
-  }, 1500);
-});
-
-let b = new MyPromise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("c");
-  }, 300);
-});
-
-let c = new MyPromise((resolve, reject) => {
-  setTimeout(() => {
-    resolve(123);
-  }, 2500);
-});
-
-
-MyPromise.race([a,b,c]).then(console.log)
+async function  test() {
+  for(let e of list){
+    const res= await square(e);
+    console.log(res)
+  }
+  // list.forEach(async x=> {
+  //   const res = await square(x)
+  //   console.log(res)
+  // })
+}
+test()
