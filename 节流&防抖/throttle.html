@@ -21,6 +21,7 @@
 <body>
     <div id="container"></div>
     <button id="button">取消节流</button>
+    <script src="throttle.js"></script>
     <script>
         let count = 1;
         const container = document.getElementById('container');
@@ -30,38 +31,7 @@
             return count;
         };
 
-        container.onmousemove = throttle(getUserAction, 1000);
-
-        function throttle(fn, wait = 100) {
-            let timeout = null;
-            let previous = 0;
-
-            let later = function () {
-                previous = +new Date();
-                timeout = null;
-                fn.apply(context, args);
-            }
-
-            let throottled = function () {
-                const context = this;
-                const args = arguments;
-
-                const now=+new Date();
-                const remaining=wait-(now-previous);
-                if(remaining<=0||remaining>wait){
-                    if(timeout){
-                        clearTimeout(timeout);
-                        timeout=null;
-                    }
-                    previous=now;
-                    fn.apply(context, args);
-                }else if (!timeout) {
-                    timeout=setTimeout(later,remaining);
-                }
-            }
-            return throottled;
-        }
-
+        container.onmousemove = throttle(getUserAction, 2000);
     </script>
 </body>
 

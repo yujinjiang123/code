@@ -106,6 +106,22 @@ function diffChildren(oldChildren, newChildren, index, patches, currentPatch) {
   });
 }
 
+
+function patch(oldVnode,vnode,parentElm){
+  if(!oldVnode){
+    // addVnodes(parentElm,null,vnode,0,vnode.length-1);
+  }else if(!vnode){
+    // removeVnodes(parentElm,oldVnode,0,oldVnode.length-1);
+  }else{
+    if(sameNode(oldVnode,vnode)){
+      patchVnode(oldVnode,vnode);
+    }else{
+      // removeVnodes(parentElm,oldVnode,0,oldVnode.length-1)
+      // addVnode(parentElm,null,vnode,0,vnode.lenght-1)
+    }
+  }
+}
+
 function updateChildren(oldList, newList) {
   let oldStartIdx = 0,
     newStartIdx = 0;
@@ -138,23 +154,7 @@ function updateChildren(oldList, newList) {
       oldEndVnode = oldList[--oldEndVnode];
       newStartVnode = newList[++newStartIdx];
     } else {
-
-    }
-  }
-}
-
-
-function patch(oldVnode,vnode,parentElm){
-  if(!oldVnode){
-    // addVnodes(parentElm,null,vnode,0,vnode.length-1);
-  }else if(!vnode){
-    // removeVnodes(parentElm,oldVnode,0,oldVnode.length-1);
-  }else{
-    if(sameNode(oldVnode,vnode)){
-      patchVnode(oldVnode,vnode);
-    }else{
-      // removeVnodes(parentElm,oldVnode,0,oldVnode.length-1)
-      // addVnode(parentElm,null,vnode,0,vnode.lenght-1)
+      
     }
   }
 }

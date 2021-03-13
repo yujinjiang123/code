@@ -1,4 +1,4 @@
-function ListNode(x,next=null) {
+function ListNode(x, next = null) {
   this.val = x;
   this.next = next;
 }
@@ -149,19 +149,23 @@ var countSubstrings = function (s) {
 };
 
 //k个一组反转链表
-const head=new ListNode(1,new ListNode(2,new ListNode(3,new ListNode(4,new ListNode(5)))));
+const head = new ListNode(
+  1,
+  new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5))))
+);
 function reverseKGroup(head, k) {
-  if(!head) return ;
+  if (!head) return;
   const node = new ListNode(0);
   node.next = head;
-  let pre = node,end=null;
+  let pre = node,
+    end = null;
   while (pre) {
-    end=pre.next;
+    end = pre.next;
     let i;
-    for (i = 1; i < k && end; i++){
-        end=end.next;
+    for (i = 1; i < k && end; i++) {
+      end = end.next;
     }
-    if(i<k||end===null) break;
+    if (i < k || end === null) break;
     pre = reverse(pre, k);
   }
   return node.next;
@@ -178,56 +182,97 @@ function reverse(pre, k) {
   return p.next ? p : null;
 }
 
-
-
-
-const addStrings = function(s, t){
-  let len1=s.length,len2=t.length;
-  let maxLen=Math.max(len1,len2);
-  s=Array(maxLen-len1+1).join('0').concat(s);
-  t=Array(maxLen-len2+1).join('0').concat(t);
-  let sum="";
-  let flag=0;
-  for(let i=maxLen-1;i>=0;i--){
-    const val=parseInt(s[i])+parseInt(t[i])+flag;
-    flag=Math.floor(val/10);
-    sum=val%10+sum;
+const addStrings = function (s, t) {
+  let maxLen = Math.max(s.length, t.length);
+  s = s.padStart(maxLen, "0");
+  t = t.padStart(maxLen, "0");
+  let sum = "";
+  let flag = 0;
+  for (let i = maxLen - 1; i >= 0; i--) {
+    const val = parseInt(s[i]) + parseInt(t[i]) + flag;
+    flag = Math.floor(val / 10);
+    sum = (val % 10) + sum;
   }
-  if(flag===1){
-    sum+='1';
+  if (flag === 1) {
+    sum += "1";
   }
   return sum;
-}
-
+};
 
 // console.log(addStrings("9007199254740991","1234567899999999999")==='1243575099254740990')
 
-function mytrim(str){
-  let start=0,end=str.length-1;
-  while(start<=end&&str[start]===' '){
+function mytrim(str) {
+  let start = 0,
+    end = str.length - 1;
+  while (start <= end && str[start] === " ") {
     start++;
   }
-  while(start<=end&&str[end]===' '){
+  while (start <= end && str[end] === " ") {
     end--;
   }
-  return str.substring(start,end+1);
+  return str.substring(start, end + 1);
 }
-
 
 // console.log(mytrim("   123   "))
 
-var mySqrt = function(x) {
-    let start=0,end=(x>>1)+1,mid;
-    while(start<end){
-        mid=(start+end)>>1;
-        if(mid**2===x) return mid;
-        if(mid**2<x) {
-            start=mid;
-        }else{
-            end=mid-1;
-        }
+var mySqrt = function (x) {
+  let start = 0,
+    end = (x >> 1) + 1,
+    mid;
+  while (start < end) {
+    mid = (start + end) >> 1;
+    if (mid ** 2 === x) return mid;
+    if (mid ** 2 < x) {
+      start = mid;
+    } else {
+      end = mid - 1;
     }
-    return start;
+  }
+  return start;
 };
 
-mySqrt(4);
+// mySqrt(4);
+
+//76 最小覆盖子串
+function minWindow(s, t) {
+  const needs = new Map();
+  const window = new Map();
+  for (let ch of t) {
+    needs.set(ch, needs.has(ch) ? needs.get(ch) + 1 : 1);
+  }
+  let [left, right, match, start, minLen, len] = [
+    0,
+    0,
+    0,
+    0,
+    Number.MAX_SAFE_INTEGER,
+    s.length
+  ];
+  while (right < len) {
+    const ch = s[right];
+    if (needs.has(ch)) {
+      window.set(ch, window.has(ch) ? window.get(ch) + 1 : 1);
+      if (window.get(ch) === needs.get(ch)) {
+        match++;
+      }
+    }
+    right++;
+    while (match === needs.size) {
+      if (right - left < minLen) {
+        start = left;
+        minLen = right - left;
+      }
+      const ch2 = s[left];
+      if (needs.has(ch2)) {
+        window.set(ch2, window.get(ch2) - 1);
+        if (window.get(ch2) < needs.get(ch2)) {
+          match--;
+        }
+      }
+      left++;
+    }
+  }
+  return minLen === Number.MAX_SAFE_INTEGER ? "" : s.substring(start,start+minLen);
+}
+
+// console.log(minWindow("ADOBECODEBANC", "ABC"));
