@@ -246,7 +246,7 @@ function minWindow(s, t) {
     0,
     0,
     Number.MAX_SAFE_INTEGER,
-    s.length
+    s.length,
   ];
   while (right < len) {
     const ch = s[right];
@@ -272,7 +272,29 @@ function minWindow(s, t) {
       left++;
     }
   }
-  return minLen === Number.MAX_SAFE_INTEGER ? "" : s.substring(start,start+minLen);
+  return minLen === Number.MAX_SAFE_INTEGER
+    ? ""
+    : s.substring(start, start + minLen);
 }
 
 // console.log(minWindow("ADOBECODEBANC", "ABC"));
+
+// 无重复字符的最长子串
+function lengthOfLongestSubstring(s) {
+  let [left, right, len, res] = [0, 0, s.length, 0];
+  const window=new Map();
+  while (right < len) {
+    const ch = s[right];
+    window.set(ch, window.has(ch) ? window.get(ch) + 1 : 1);
+    right++;
+    while (window.get(ch) > 1) {
+      const ch2 = s[left];
+      window.set(ch2, window.get(ch2) - 1);
+      left++;
+    }
+    res = Math.max(res, right - left);
+  }
+  return res;
+}
+
+console.log(lengthOfLongestSubstring("pwwkew"))
